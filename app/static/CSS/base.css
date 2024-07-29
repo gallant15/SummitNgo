@@ -1,0 +1,156 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    overflow-x: hidden;    
+    background-color: rgb(255, 249, 249);
+    width: 100vw;
+}
+/* .video{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    width: 100%;
+    height: 200%;
+    background-color: red;
+} */
+.log {
+    border: 1.8px solid white;
+    text-align: center;
+    width: 70px;
+    height: 20px;
+    padding-top: 5px;
+    border-radius: 10px;
+}
+header {
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+}
+.shape img{
+    position: absolute;
+    right: 0px;
+    width: 33%;
+    height: 39%;
+    z-index: -1;
+}
+.logowrap img{
+    width: 60px;
+    padding-left: 50px;
+    padding-top: 15px;
+}
+.logowarp {
+    width: 40%;
+    height: 100px;
+}
+
+nav {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+}
+ul{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding-right: 20px;
+    padding-top: 15px;
+    font-family: 'Segoe UI';
+    font-size: 11px;
+    font-weight: bold;
+    color: black;
+    list-style: none;
+}
+.mainMenu li a {
+    display: inline;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+}
+.menu{
+    position: absolute;
+    top:20px;
+    height: 20px;
+    width: 20px;
+    right:20px;
+    visibility: hidden;
+    z-index: 9999999999999999;
+    padding: 3%;
+    
+}
+.menu img{
+    width:100%;
+    height: 100%;
+}
+.bottomlogo {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+}
+.bottomlogo img{
+    width: 30px;
+}
+.logout{
+    border: 1.8px solid white;
+    background-color: white;
+    text-align: center;
+    width: 100px;
+    height: 20px;
+    padding-top: 5px;
+    border-radius: 10px;
+}
+
+@media(max-width: 600px){
+    #closemenu{
+        display: none;
+    }
+    nav .mainMenu {
+        height: 30vh;
+        position: absolute;
+        top: -100%;
+        left: 0;
+        z-index: 1;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-left: 50px;
+        gap: 10px;
+        background-color: transparent;
+        box-shadow: 1px 2px 20px black;
+        transition: top 1s ease;
+        width: 90vw;
+        /* background-color: red; */
+        border-bottom-left-radius: 30px;
+    }
+    nav .mainMenu li a {
+        background-color: none;
+        color: red;
+        font: 1.6rem;
+        font-weight: bold;
+    }
+    .buton {
+        padding-left: 40px;
+        padding-top: 430px;
+        padding-bottom: 120px;
+    }
+    .log {
+        background-color: rgb(1, 1, 49);
+        border: none;
+    }
+    .shape img{
+        width: 30%;
+        height: 20%;
+    }    
+    #openmenu{
+        visibility: visible;
+        cursor: pointer;
+    }
+    .menu{
+        visibility: visible;
+        cursor: pointer;
+    }   
+}

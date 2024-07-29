@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% include 'background.html' %}
+{% load static %}
+{% block title %} Home Page {% endblock %} 
+
+{% block css %} <link rel="stylesheet" href="{% static 'CSS/index.css' %}"> {% endblock %}
+
+{% block main %}
+<!-- <div class="video_wrap">
+    <video autoplay loop muted plays-inline class="video1">
+        <source src="{% static 'ASSETS/NGOVIDEO.mp4' %}" type="video/mp4">
+    </video> -->
+</div>
+    <div class="listing">TOP NGO LISTING</div>
+        <div class="welcome">Welcome to
+            <br>Summit NGO Hub
+        </div>
+        <div class="ourwork">Our work aims to break the vicious cycle of poverty
+            <br>and social isolation and to restore hope for a better
+            <br>future
+        </div>
+        <div class="buton">
+            <button class="button11">
+                <a href="{% url 'discovermore' %}">Discover more</a></button>
+        </div>
+        {% include 'background.html' %}
+        {% include 'footer.html' %}
+        {% endblock %}

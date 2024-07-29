@@ -1,0 +1,24 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block title %} Discover More {% endblock %} 
+{% block css %} <link rel="stylesheet" href="{% static 'CSS/discovermore.css' %}"> {% endblock %}
+
+
+
+{% block main %}
+<h5 class="category">CATEGORY</h5>
+    <h3>We Offer Best Services</h3>
+    <span>
+        <div><img src="{% static 'ASSETS/donation.svg' %}" class="one"></div>
+        <div><img src="{% static 'ASSETS/projects (1).svg' %}" class="two"></div>
+        <div><img src="{% static 'ASSEtS/events.svg' %}" class="three"></div>
+        <div><img src="{% static 'ASSETS/customization.svg' %}" class="four"></div>
+    </span>
+    <h5 class="category1">CATEGORY</h5>
+    <h3>We Offer Best Services</h3>
+    <div class="NGO">
+        <img src="{% static 'ASSETS/NGOs.svg' %}">
+    </div>
+
+{% include 'footer.html' %}
+{% endblock %}

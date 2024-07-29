@@ -1,0 +1,12 @@
+.reg{
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 180%;
+    z-index: -11111111;
+}
+@media(max-width: 800px){
+    .reg{
+        height: 190%;
+    }
+}

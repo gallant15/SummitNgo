@@ -1,0 +1,103 @@
+.container {
+    width: 380px;
+    background-color: transparent;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border-radius: 30px;
+    padding-top: 40px;
+    padding-left: 30px;  
+    box-shadow: 1px 5px 10px 1px black;
+    padding-bottom: 15px;
+    margin-bottom: 40px;
+    margin-top: 110px;
+    background-position: center;
+}
+.input {
+    width: 85%;
+    height: 30px;  
+    margin: 10px;
+    padding-left: 10px;
+    border: 1.5px solid black;
+    color: #000;    
+}
+.bullet{
+    margin: 10px;
+}
+
+form {
+    font-size: 18px;
+    font-family: 'Lucida Sans';
+}
+.explorer {
+    width: 70px;
+    height: 30px;
+    background-color: rgb(85, 85, 199);
+    border: none;
+    border-radius: 10px;
+    font-weight: bolder;
+    color: white;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.button3 {
+    width: 70px;
+    height: 30px;
+    background-color: rgb(146, 5, 5);
+    border: none;
+    border-radius: 10px;
+    font-weight: bolder;
+    cursor: pointer;
+}
+.account {
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+p {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium';
+    margin-top: 20px;
+    margin-left: 22.5%;
+    width: 55%;
+    height: 30px;
+    background-color: white;
+    border: 1.5px solid black;
+    border-radius: 15px;
+}
+.signUpLink{
+    padding-top: 3px;
+    padding-bottom: 10px;
+    width: 42%;
+    border: none;
+    background-color: rgb(255, 3, 108);
+    border-radius: 9px;    
+    margin-top: 0px;
+    margin-left: 3%;
+}
+.signUpLink a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+}
+.toggle, .toggle2{
+    position: absolute;
+    margin-left: -34px;
+    zoom: 1.1;
+    margin-top: 15px;
+    cursor: pointer;
+}
+.message{
+    font-size: 14px;
+    color: red;
+    margin-left: 37%;
+    padding: 5px 20px;
+    /* visibility: hidden; */
+}
+.notification{
+    font-size: 15px;
+    padding-left: 10px;
+}

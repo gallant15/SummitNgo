@@ -1,0 +1,137 @@
+footer{
+    width: 100%;
+    position: absolute;
+    background: linear-gradient(to right, #00093c, #2d0b00);
+    margin-top: 0px;
+    color: #fff;
+    padding: 50px 0 40px;
+    border-top-left-radius: 45px;
+    font-size: 16px;
+    font-family: 'Segoe UI';
+    line-height: 20px;
+    text-align: justify;
+}
+.row{
+    width: 92%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.col{
+    flex-basis: 30%;
+    padding: 10px;
+    text-align: justify;
+}
+.col:nth-child(2), .col:nth-child(3){
+    flex-basis: 20%;
+}
+.logonew{
+    width: 80px;
+    margin-bottom: 30px;
+}
+.col h3{
+    width: fit-content;
+    margin-bottom: 40px;
+    position: relative;
+}
+.email-id{
+    width: fit-content;
+    border-bottom: 1px solid #ccc;
+    margin: 20px 0;
+}
+.arrow{
+    width: 19px;
+    cursor: pointer;
+    
+}
+form{
+    padding-bottom: 15px;
+    /* display: flex; */
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1ox solid #ccc;
+    margin-bottom: 50px;
+}
+form input{
+    background: transparent;
+    color: #fff;
+    border: 1px solid white;
+    outline: none;
+    width: 150px;
+    height: 30px;
+    padding-left: 10px;
+}
+.socialss .fab img{
+    text-align: center;
+    line-height: 40px;
+    justify-content: space-around;
+    margin-top: 20px;  
+    margin-bottom: 10px; 
+    margin-left: 80px;
+}
+.socialss .fab img{
+    transition: scale, rotate;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+}
+.socialss .fab :hover{
+    rotate: 360deg;
+    scale: 1.3;
+}
+.shortHr{
+    width: 100%;
+    margin-bottom: 1px;
+}
+.shortHrdown{
+    width: 100%;
+    margin-bottom: 70px;
+}
+hr{
+    width: 90%;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    margin: 20px auto;
+}
+.copywrite{
+    text-align: center;
+}
+.underline{
+    width: 100%;
+    height: 5px;
+    background: #767676;
+    border-radius: 3px;
+    position: absolute;
+    top: 25px;
+    left: 0;
+    overflow: hidden;
+}
+.underline span{
+    width: 15px;
+    height: 100%;
+    background: #fff;
+    position: absolute;
+    animation: moving 2s linear infinite;
+}
+@keyframes moving{
+    0%{
+        left: -20px;
+    }
+    100%{
+        left: 100%;
+    }
+}
+@media(max-width: 800px){
+    footer{
+        bottom: unset;
+        font-size: 14px;
+        text-align: left;
+    }
+    .col{
+        flex-basis: 100%;
+    }
+    .col:nth-child(2), .col:nth-child(3){
+        flex-basis: 100%;
+    }
+}

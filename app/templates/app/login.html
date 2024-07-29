@@ -1,0 +1,36 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block title %} Login {% endblock %} 
+{% block css %} <link rel="stylesheet" href="{% static 'CSS/login.css' %}"> {% endblock %}
+
+{% block main %}
+<div class="backgroundcolor">
+    <div class="container1">
+        <div class="notification">
+            {% for message in messages %}
+            <h6>{{ message }}</h6>
+            {% endfor %}
+        </div>
+        <p class="loginNow">Login now</p>
+        <form method="post">
+            {% csrf_token %}
+            <input placeholder="Email/Phone Number/Username" class="input" name="username" required>
+            <br>
+            <input type="password" placeholder="Input Password" class="input" name="password" required>
+            <br>
+            <span><input type="checkbox" id="remember">
+            <label class="rememberMe" for="remember">Remember me</label>
+            <button type="submit" class="submit">Sign in</button>
+        </span>
+        </form>
+        <p class="forgetPassword">Forget Password?</p>
+        <hr class="line">
+        <p class="Dont">Don't have an account?</p>
+        <button class="SignUp">
+            <a href="{% url 'registeration' %}">Sign up</a>
+        </button>
+    </div>
+</div>
+
+{% include 'reg copy.html' %}
+{% endblock %}

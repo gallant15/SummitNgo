@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'CSS/base.css' %}" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'favicon/site.webmanifest' %}">
+    {% block css %} {% endblock css %}
+  </head>
+
+  <body>
+    <header>
+      <div class="logowrap">
+        <img src="{% static 'ASSETS/logo22.png' %}" />
+      </div>
+      <div class="shape">
+        <img src="{% static 'ASSETS/Rectangle 9.png' %}" />
+      </div>
+      <div class="illustration"></div>
+      <nav>
+        <div class="menu" id="openmenu">
+          <img src="{% static 'ASSETS/menu.png' %}" />
+        </div>
+        <div class="menu" id="closemenu">
+          <img src="{% static 'ASSETS/closetag.svg' %}" />
+        </div>
+        <ul class="mainMenu">
+          {% if user.is_authenticated %}
+
+          <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+          
+          <li>
+            <a href="{% url 'logout' %}" class="logout" style="color: red"
+              >Logout</a
+            >
+          </li>
+          {% else %}
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'contact' %}">Contact Us</a></li>
+          <li class="log">
+            <a href="{% url 'registeration' %}" style="color: white">Sign Up</a>
+          </li>
+          <li class="log">
+            <a href="{% url 'login' %}" style="color: white">Login</a>
+          </li>
+          {% endif %}
+        </ul>
+      </nav>
+    </header>
+
+    <main>{% block main %} {% endblock %}</main>
+
+    <div class="bottomlogo">
+      <a href="https://wa.link/vbog10">
+        <img src="{% static 'ASSETS/whatsap.png' %}" />
+      </a>
+    </div>
+  </body>
+  <script>
+    const mainMenu = document.querySelector(".mainMenu");
+    const closeMenu = document.querySelector("#closemenu");
+    const openMenu = document.querySelector("#openmenu");
+
+    function show() {
+      mainMenu.style.display = "flex";
+      mainMenu.style.top = "0";
+
+      closeMenu.style.display = "block";
+      openMenu.style.display = "none";
+    }
+    function close() {
+      mainMenu.style.top = "-100%";
+      closeMenu.style.display = "none";
+      openMenu.style.display = "block";
+    }
+
+    closeMenu.addEventListener("click", close);
+    openMenu.addEventListener("click", show);
+  </script>
+  {% block script %} {% endblock script %}
+</html>

@@ -1,0 +1,123 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block title %} Registration Page {% endblock %} 
+{% block css %} <link rel="stylesheet" href="{% static 'CSS/register.css' %}"> {% endblock %}
+{% block script %} <script src="{% static 'JAVASCRIPT/register.js' %}"></script> {% endblock %}
+
+{% block main %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+<section>
+    
+    <div class="container">   
+             
+        <span>
+            <button class="signUpLink">
+                <a href="https://accounts.google.com/o/oauth2/v2/auth/oauthchooseaccount?scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&response_type=code&state=jumpUrl%3Dhttps%3A%2F%2Fwww.fotor.com%2Fsign-in%2Fgoogle-success.html&client_id=163249411645-j829l76h852fopt9blpemn5esr4dl568.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fwww.fotor.com%2Fapi%2Fuser%2Flogin%2Fgoogle%2Fcallback&service=lso&o2v=2&ddm=0&flowName=GeneralOAuthFlow">
+                    <img src="{% static 'ASSETS/icons8-google.svg' %}">Sign up with Google
+                </a>
+            </button>
+            <button class="signUpLink">
+                <a href="https://appleid.apple.com/auth/authorize?client_id=com.everimaging.fotorweb&redirect_uri=https%3A%2F%2Fwww.fotor.com%2Fapi%2Fuser%2Flogin%2Fapple%2Fcallback&response_type=code%20id_token&scope=name%20email&response_mode=web_message&frame_id=34ca0e3a-df05-4649-a37f-940d131de3f0&m=11&v=1.5.5">
+                    <img src="{% static 'ASSETS/icons8-apple.svg' %}">
+                    Sign up with Apple
+                </a>
+            </button>
+        </span>
+        <p>Create an Account</p>
+        <form method="post">
+            {% csrf_token %}
+            <br>
+            <input id="name1" placeholder="First Name" class="input" name="firstname" required>
+            <br>
+            <input id="name2" placeholder="Surname" class="input" name="surname" required>
+            <br>
+            <input id="name3" placeholder="Username" class="input" name="username" required>
+            <div class="notification">
+                {% for message in messages %}
+                <h6>{{ message }}</h6>
+                {% endfor %}
+            </div>
+            <br>
+            <input type="number" placeholder="Phone Number" id="number" class="input" name="phonenumber" required>
+            <br>
+            <input type="email" placeholder="Gmail" id="mail" class="input" name="gmail" required>
+            <br>
+            <input type="date" class="input" name="dateofbirth" placeholder="Date of Birth" required>
+            <br>
+            <label class="bullet">Gender:</label>
+            <br>
+            <input type="radio" id="sex1" name="gender" class="bullet">
+            <label for="sex1">Female</label>
+            <br>
+            <input type="radio" class="bullet" id="sex" name="gender">
+            <label for="sex">Male</label>
+            <br>
+            <label class="bullet">Location:</label>
+            <select name="state" required>
+                <option>--Select--</option>
+                <option>Abia</option>
+                <option>Adamawa</option>
+                <option>Akawa Ibom</option>
+                <option>Anambra</option>
+                <option>Bauchi</option>
+                <option>Bayelsa</option>
+                <option>Benue</option>
+                <option>Borno</option>
+                <option>Cross River</option>
+                <option>Delta</option>
+                <option>Ebonyi</option>
+                <option>Edo</option>
+                <option>Ekiti</option>
+                <option>Enugu</option>
+                <option>Abuja</option>
+                <option>Gombe</option>
+                <option>Imo</option>
+                <option>Jigawa</option>
+                <option>Kaduna</option>
+                <option>Kana</option>
+                <option>Katsina</option>
+                <option>Kebbi</option>
+                <option>kogi</option>
+                <option>Kwara</option>
+                <option>Lagos</option>
+                <option>Nasarawa</option>
+                <option>Niger</option>
+                <option>Ogun</option>
+                <option>Ondo</option>
+                <option>Osun</option>
+                <option>Oyo</option>
+                <option>Plateau</option>
+                <option>Rivers</option>
+                <option>Sokoto</option>
+                <option>Taraba</option>
+                <option>Yobe</option>
+                <option>Zamfara</option>
+            </select>
+            <br>
+            <input type="password" placeholder="Password" id="password1" class="input" name="password" required>
+            <span class="toggle fa fa-eye"></span>
+            <div class="notification">
+                {% for message in messages %}
+                <h6 class="notification">{{ message }}</h6>
+                {% endfor %}
+            </div>
+            <br>
+            <input type="password" placeholder="Confirm Password" id="password2" class="input" name="cpassword" required>
+            <span class="toggle2 fa fa-eye"></span> 
+            <br>
+            <h5 class="message"></h5>
+            <input id="code" class="input" placeholder="Referral Code">
+            <br>
+            <button type="submit" class="explorer">Submit</button>
+            <div class="account">Alreday have an account?
+                <button class="button3">
+                    <a href="{% url 'login' %}" style="color: white;">Login</a>
+                </button>
+            </div>
+        </form>
+    </div>
+    
+</section>
+</div>
+{% include 'reg.html' %}
+{% endblock %}

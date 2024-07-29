@@ -1,0 +1,46 @@
+{% load static %}
+{% block css %} <link rel="stylesheet" href="{% static 'CSS/footer.css' %}"> {% endblock %}
+<footer>
+    <div class="row">
+        <div class="col">
+            <img src="{% static 'ASSETS/logo1.png' %}" class="logonew">
+            <p>Summit is a Non Governmental Organisation, established by Mr Funke Oderanti to promote
+                welfare activties aimed at the alleviation of human suffering and overall amelioration of society
+                especially for poor, helpless and weaks.
+            </p>
+        </div>
+        <div class="col">
+            <h3>Office<div class="underline"><span></span></div>
+            </h3>
+            <p>Akala Express-Road</p>
+            <p>Kuola, Apata</p>
+            <p>Ibadan, Oyo State, Nigeria.</p>
+            <p class="email-id">summitfoundation@gmail.com</p>
+            <h4>+2348038100143</h4>
+        </div>
+        <div class="col">
+            <h3>Newspaper<div class="underline"><span></span></div>
+            </h3>
+            <form>
+                <input type="email" placeholder="Input your email details" required>
+                <span>
+                    <button type="submit" class="arrow">
+                        <img src="{% static 'ASSETS/arrow-right-solid.svg' %}">
+                    </button>
+                </span>
+            </form>
+            <hr class="shortHr">
+            <span class="socialss">
+                <a href="https://www.facebook.com/adenirantobiloba.festus?mibextid=ZbWKwL" class="fab">
+                    <img src="{% static 'ASSETS/icons8-facebook.svg' %}">
+                </a>
+                <a href="https://x.com/Festus25552718?s=08" class="fab">
+                    <img src="{% static 'ASSETS/icons8-twitter.svg' %}">
+                </a>
+            </span>
+            <hr class="shortHrdown">
+        </div>
+    </div>
+    <hr>
+    <p class="copywrite">Summit Foundation c 2022 - All Rights Reserved</p>
+</footer>

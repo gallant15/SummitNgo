@@ -1,0 +1,8 @@
+.illustration{
+    position: absolute;
+    top: 0px;
+    width: 100vw;
+    height: 120vh;
+    z-index: -11111111;
+    background-image: radial-gradient(rgb(255, 184, 126), rgb(186, 186, 255), white);
+}

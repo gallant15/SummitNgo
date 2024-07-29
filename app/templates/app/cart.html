@@ -1,0 +1,111 @@
+{% extends 'base2.html' %}
+{% load static %}
+
+    <div class="container">
+        {% block main %}
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="box-element">
+                    <a class="btn btn-outline-dark" href="{% url 'dashboard' %}">&#x2190; Continue Shopping</a>
+                    <br>
+                    <br>
+
+                    <table class="table">
+                        <tr>
+                            <th>
+                                <h5>Items: <strong>{{order.get_cart_items}}</strong></h5>
+                            </th>
+                            <th>
+                                <h5>Total: <strong>N{{order.get_cart_total|floatformat:2}}</strong></h5>
+                            </th>
+                            <th>
+                                <a style="float: right; margin: 5px;" class="btn btn-success"
+                                    href="{% url 'checkout' %}">Checkout</a>
+                            </th>
+                        </tr>
+                    </table>
+                </div>
+
+                <br>
+
+                <div class="box-element">
+                    <div class="cart-row">
+                        <div style="flex: 2;"></div>
+                        <div style="flex: 2;"><strong>Item</strong></div>
+                        <div style="flex: 1;"><strong>Price</strong></div>
+                        <div style="flex: 1;"><strong>Quanity</strong></div>
+                        <div style="flex: 1;"><strong>Total</strong></div>
+                    </div>
+
+                    {% for item in items %}
+                    <div class="cart-row">
+                        <div style="flex: 2;"><img class="row-image" src="{{item.product.imageURL}}"></div>
+                        <div style="flex: 2;">{{item.product.name}}</div>
+                        <div style="flex: 1;">N{{item.product.price|floatformat:2}}</div>
+                        <div style="flex: 1;">
+                            <p class="quantity">{{item.quantity}}</p>
+                            <div class="quantity">
+                                <img class="chg-quantity" src="{% static 'ASSETS/3+arrow-up.png' %}">
+                                <img class="chg-quantity" src="{% static 'ASSETS/2+arrow-down.png' %}">
+                            </div>
+                        </div>
+                        <div style="flex: 1;">N{{item.get_total|floatformat:2}}</div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% endblock main %}
+    </div>
+    {% block footer %}
+    <div class="col">
+        <img src="{% static 'ASSETS/logo1.png' %}" class="logonew">
+        <p>Summit is a Non Governmental Organisation, established by Mr Funke Oderanti to promote
+            welfare activties aimed at the alleviation of human suffering and overall amelioration of society
+            especially for poor, helpless and weaks.
+        </p>
+    </div>
+    <div class="col">
+        <h3>Office<div class="underline"><span></span></div>
+        </h3>
+        <p>Akala Express-Road</p>
+        <p>Kuola, Apata</p>
+        <p>Ibadan, Oyo State, Nigeria.</p>
+        <p class="email-id">summitfoundation@gmail.com</p>
+        <h4>+2348038100143</h4>
+    </div>
+    <div class="col">
+        <h3>Newspaper<div class="underline"><span></span></div>
+        </h3>
+        <form>
+            <input type="email" placeholder="Input your email details" required>
+            <span>
+                <button type="submit" class="arrow">
+                    <img src="{% static 'ASSETS/arrow-right-solid.svg' %}">
+                </button>
+            </span>
+        </form>
+        <hr class="shortHr">
+        <span class="socialss">
+            <a href="https://www.facebook.com/adenirantobiloba.festus?mibextid=ZbWKwL" class="fab">
+                <img src="{% static 'ASSETS/icons8-facebook.svg' %}">
+            </a>
+            <a href="https://x.com/Festus25552718?s=08" class="fab">
+                <img src="{% static 'ASSETS/icons8-twitter.svg' %}">
+            </a>
+        </span>
+        <hr class="shortHrdown">
+    </div>
+    </div>
+    <hr>
+    <p class="copywrite">Summit Foundation c 2022 - All Rights Reserved</p>
+
+    {% endblock %}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    
+</body>
+
+</html>
